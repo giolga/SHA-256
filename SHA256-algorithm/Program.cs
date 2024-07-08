@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SHA256_algorithm
 {
     internal class Program
     {
-        private static List<string> paddedMessage = new List<String>();
-        private static List<string> nBlocks = new List<String>();
+        private static List<string> messageBits = new List<string>();
+        private static List<string> nBlocks = new List<string>();
 
         private static string BinaryValue(int asciiValue) // STEP - 1
         {
@@ -29,23 +30,17 @@ namespace SHA256_algorithm
         private static string MessagePadding(string incomingBits) // STEP - 2
         {
             string output = incomingBits + '1';
-            int cnt = 1;
 
             int zeros = (448 - (incomingBits.Length % 512)) % 512;
-            zeros--;
+            if (zeros < 0)
+            {
+                zeros += 512;
+            }
+            //MessageBox.Show($"Padding zeros: {zeros} ");
+            zeros--; //in the beginning we added one extra '1' bit so that's why we decrement zeros
 
             while (zeros > 0)
             {
-                //if (cnt == 8)
-                //{
-                //    output += "0 ";
-                //    cnt = 0;
-                //}
-                //else
-                //{
-                //    output += '0';
-                //    cnt++;
-                //}
                 output += '0';
                 zeros--;
             }
@@ -79,13 +74,15 @@ namespace SHA256_algorithm
             for (int i = 0; i < s.Length; i++)
             {
                 bin += BinaryValue(Convert.ToInt32(s[i]));
-                paddedMessage.Add(BinaryValue(Convert.ToInt32(s[i])));
+                messageBits.Add(BinaryValue(Convert.ToInt32(s[i])));
             }
 
             Console.WriteLine(bin.Length + " " + s.Length * 8);
-            Console.WriteLine($"Binary value of string: {bin}");
-            Console.WriteLine($"448 bit value: {MessagePadding(bin)}");
-            Console.WriteLine($"512 bit value: {MessagePadding(bin) + SixtyFourRepresentation(s.Length * 8)}");
+            Console.Write("Binary value of string: ");
+            messageBits.ForEach(bits => Console.Write($"{bits} "));
+            Console.WriteLine($"\nThe count of messageBits: {messageBits.Count} --- String length {s.Length}");
+            //Console.WriteLine($"448 bit value: {MessagePadding(bin)}");
+            Console.WriteLine($"n 512 bit value: {MessagePadding(bin) + SixtyFourRepresentation(s.Length * 8)}");
 
             Console.WriteLine($"The total length is {MessagePadding(bin).Length + SixtyFourRepresentation(s.Length * 8).Length}");
             Console.WriteLine($"Number of blocks: {(MessagePadding(bin).Length + SixtyFourRepresentation(s.Length * 8).Length) / 512}");
