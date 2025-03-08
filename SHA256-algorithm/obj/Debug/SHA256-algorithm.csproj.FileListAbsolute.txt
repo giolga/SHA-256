@@ -12,3 +12,10 @@ C:\Users\Mikey\Desktop\C#\SHA256-algorithm\SHA256-algorithm\obj\Debug\SHA256-alg
 C:\Users\Mikey\Desktop\C#\SHA256-algorithm\SHA256-algorithm\obj\Debug\SHA256-algorithm.csproj.CoreCompileInputs.cache
 C:\Users\Mikey\Desktop\C#\SHA256-algorithm\SHA256-algorithm\obj\Debug\SHA256-algorithm.exe
 C:\Users\Mikey\Desktop\C#\SHA256-algorithm\SHA256-algorithm\obj\Debug\SHA256-algorithm.pdb
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\bin\Debug\SHA256-algorithm.exe.config
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\bin\Debug\SHA256-algorithm.exe
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\bin\Debug\SHA256-algorithm.pdb
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\obj\Debug\SHA256-algorithm.csproj.AssemblyReference.cache
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\obj\Debug\SHA256-algorithm.csproj.CoreCompileInputs.cache
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\obj\Debug\SHA256-algorithm.exe
+C:\Users\Mikey\Desktop\SHA-256\SHA256-algorithm\obj\Debug\SHA256-algorithm.pdb
